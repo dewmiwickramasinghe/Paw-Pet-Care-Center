@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Import Link
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import PaymentSuccess from './components/PaymentSuccess';
-import Receipt from './components/Receipt'; // Import the Receipt component
+import Receipt from './components/Receipt';
+import MyOrders from './components/MyOrders'; // Import the MyOrders component
 import './App.css';
 
 // Image URL for the cart icon
@@ -43,6 +44,9 @@ function App() {
                     <div className="header-left">
                         <h1>Paw pet care center</h1>
                     </div>
+                    <Link to="/my-orders"> 
+                                <button className="MyOrderbutton">My Orders</button>
+                            </Link>
                     <div className="header-right">
                         <input type="text" placeholder="Search product here..." />
                         <button className="search-button">Search</button>
@@ -55,18 +59,17 @@ function App() {
                             />
                             <span className="username">My cart</span>
                             <button className="logout-button">Logout</button>
+                           
                         </div>
                     </div>
                 </header>
                 <main className="app-main">
                     <Routes>
                         <Route path="/" element={<ProductList addToCart={addToCart} />} />
-                        <Route path="/checkout" element={<Checkout
-                            cartItems={cart}
-                            setCart={setCart} // Pass setCart to Checkout
-                        />} />
+                        <Route path="/checkout" element={<Checkout cartItems={cart} setCart={setCart} />} />
                         <Route path="/payment-success" element={<PaymentSuccess />} />
-                        <Route path="/receipt" element={<Receipt />} /> {/* Add the Receipt route */}
+                        <Route path="/receipt" element={<Receipt />} />
+                        <Route path="/my-orders" element={<MyOrders />} /> {/* Add the route for MyOrders */}
                     </Routes>
                 </main>
                 <Cart

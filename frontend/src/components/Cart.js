@@ -21,7 +21,7 @@ const Cart = ({ isOpen, toggleCart, closeCart, cartItems, removeFromCart, update
                                 <img src={item.imageUrl} alt={item.name} />
                                 <div className="item-details">
                                     <h3>{item.name}</h3>
-                                    <p>Rs. {item.price}</p>
+                                    <p>Rs. {item.price.toFixed(2)}</p> {/* Display the correct price */}
                                     <div className="quantity-controls">
                                         <label>Quantity:</label>
                                         <input
@@ -32,7 +32,6 @@ const Cart = ({ isOpen, toggleCart, closeCart, cartItems, removeFromCart, update
                                         />
                                     </div>
                                 </div>
-                                {/* Check if the item._id exists */}
                                 <button className="remove-button" onClick={() => {
                                     console.log("Removing item with ID:", item._id);
                                     removeFromCart(item._id);

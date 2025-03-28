@@ -1,22 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const Checkout = require('../models/Checkout');
+const mongoose = require('mongoose');
+const Order = require('../models/Order');
 
-// API endpoint to save checkout details
-router.post('/save', async (req, res) => {
-    const { shippingAddress } = req.body;
-
-    if (!shippingAddress || shippingAddress.trim() === '') {
-        return res.status(400).json({ message: 'Shipping address is required.' });
-    }
-
+// Create a new order
+router.post('/place-order', async (req, res) => {
     try {
-        const checkoutData = new Checkout(req.body);
-        await checkoutData.save();
-        res.status(201).json({ message: 'Checkout details saved successfully' });
-    } catch (error) {
-        console.error('Error saving checkout details:', error);
-        res.status(500).json({ message: 'Failed to save checkout details' });
+        const order = new Order(req.body);
+        await order.save();
+        res.status(201).json(order);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Error placing order' });
     }
 });
 

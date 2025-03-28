@@ -1,76 +1,99 @@
 import React, { useState } from 'react';
-import './CreditCardForm.css';
+import './CreditCardForm.css'; 
 
 const CreditCardForm = ({ onPaymentSuccess }) => {
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [cvv, setCvv] = useState('');
     const [cardHolderName, setCardHolderName] = useState('');
+    const [errors, setErrors] = useState({});
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const validateCardDetails = () => {
+        const errors = {};
 
-        // Simulate successful payment without any card verification
-        setTimeout(() => {
-            alert('Payment Successful!');
-            onPaymentSuccess({ // Pass the card details as part of receipt data
-                cardNumber,
-                expiryDate,
-                cvv,
-                cardHolderName
-            });
-        }, 2000); // Simulate 2 seconds processing time
+        if (!cardNumber || cardNumber.length !== 16 || !/^\d+$/.test(cardNumber)) {
+            errors.cardNumber = 'Card number should be 16 digits';
+        }
+
+        if (!expiryDate || !/^\d{2}\/\d{2}$/.test(expiryDate)) {
+            errors.expiryDate = 'Expiry date should be in MM/YY format';
+        }
+
+        if (!cvv || cvv.length !== 3 || !/^\d+$/.test(cvv)) {
+            errors.cvv = 'CVV should be 3 digits';
+        }
+
+        if (!cardHolderName || !/^[a-zA-Z ]+$/.test(cardHolderName)) {
+            errors.cardHolderName = 'Card holder name should only contain letters and spaces';
+        }
+
+        setErrors(errors);
+
+        return Object.keys(errors).length === 0;
+    };
+
+    const handlePayment = async () => {
+        if (validateCardDetails()) {
+            const cardDetails = {
+                cardNumber: cardNumber,
+                expiryDate: expiryDate,
+                cvv: cvv,
+                cardHolderName: cardHolderName
+            };
+
+            onPaymentSuccess(cardDetails);
+        }
     };
 
     return (
-        <form className="credit-card-form" onSubmit={handleSubmit}>
-            <h2>Enter Credit Card Details</h2>
+        <div className="credit-card-form">
+            <h2>Enter Card Details</h2>
             <div className="form-group">
-                <label htmlFor="cardNumber">Card Number:</label>
+                <label>Card Number:</label>
                 <input
                     type="text"
-                    id="cardNumber"
-                    placeholder="XXXX-XXXX-XXXX-XXXX"
                     value={cardNumber}
                     onChange={(e) => setCardNumber(e.target.value)}
-                    required
+                    placeholder="Enter your card number"
                 />
+                {errors.cardNumber && <p style={{ color: 'red' }}>{errors.cardNumber}</p>}
             </div>
+
             <div className="form-group">
-                <label htmlFor="expiryDate">Expiry Date:</label>
+                <label>Expiry Date (MM/YY):</label>
                 <input
                     type="text"
-                    id="expiryDate"
-                    placeholder="MM/YY"
                     value={expiryDate}
                     onChange={(e) => setExpiryDate(e.target.value)}
-                    required
+                    placeholder="Enter expiry date"
                 />
+                {errors.expiryDate && <p style={{ color: 'red' }}>{errors.expiryDate}</p>}
             </div>
+
             <div className="form-group">
-                <label htmlFor="cvv">CVV:</label>
+                <label>CVV:</label>
                 <input
                     type="text"
-                    id="cvv"
-                    placeholder="CVV"
                     value={cvv}
                     onChange={(e) => setCvv(e.target.value)}
-                    required
+                    placeholder="Enter your CVV"
                 />
+                {errors.cvv && <p style={{ color: 'red' }}>{errors.cvv}</p>}
             </div>
+
             <div className="form-group">
-                <label htmlFor="cardHolderName">Card Holder Name:</label>
+                <label>Card Holder Name:</label>
                 <input
                     type="text"
-                    id="cardHolderName"
-                    placeholder="Card Holder Name"
                     value={cardHolderName}
                     onChange={(e) => setCardHolderName(e.target.value)}
-                    required
+                    placeholder="Enter your name"
                 />
+                {errors.cardHolderName && <p style={{ color: 'red' }}>{errors.cardHolderName}</p>}
             </div>
-            <button type="submit">Pay Now</button>
-        </form>
+
+            <button onClick={handlePayment}>Pay Now</button>
+        </div>
     );
 };
 

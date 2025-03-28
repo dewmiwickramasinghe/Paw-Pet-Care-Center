@@ -7,42 +7,26 @@ import axios from 'axios';
 const Checkout = ({ cartItems, setCart }) => {
     const [paymentMethod, setPaymentMethod] = useState('creditCard');
     const [shippingAddress, setShippingAddress] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const total = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0).toFixed(2);
 
-    const handlePaymentSuccess = async () => {
-        if (!shippingAddress.trim()) {
-            setErrorMessage('Shipping address is required.');
-            return;
-        }
-
+    const handlePaymentSuccess = async (cardDetails) => {
         try {
-            // Prepare checkout data
             const checkoutData = {
-                userId: "661350a04e4a5e572a84a1df", // Replace with the actual user ID
-                items: cartItems.map(item => ({
-                    productId: item._id,
-                    name: item.name,
-                    price: item.price,
-                    quantity: item.quantity || 1
-                })),
-                total: parseFloat(total),
-                paymentMethod: paymentMethod,
-                shippingAddress: shippingAddress
+                creditCardDetails: cardDetails,
+                items: cartItems,
+                total: total,
+                shippingAddress: shippingAddress,
+                paymentMethod: paymentMethod
             };
 
-            // Save checkout details to MongoDB
-            const response = await axios.post('http://localhost:5000/api/checkout/save', checkoutData);
+            const response = await axios.post('http://localhost:5000/api/checkout/place-order', checkoutData);
 
             if (response.status === 201) {
-                // Clear the cart and navigate to success page with receipt data
                 setCart([]);
                 navigate('/payment-success', {
-                    state: {
-                        receiptData: checkoutData // Pass receipt data to the success page
-                    }
+                    state: { receiptData: checkoutData }
                 });
             } else {
                 console.error('Failed to save checkout details');
@@ -84,14 +68,12 @@ const Checkout = ({ cartItems, setCart }) => {
                     <div className="shipping-address">
                         <h3>Shipping Address</h3>
                         <input
-
                             type="text"
                             placeholder="Enter your shipping address"
                             value={shippingAddress}
                             onChange={(e) => setShippingAddress(e.target.value)}
                             required
                         />
-                        {errorMessage && <p className="error-message">{errorMessage}</p>}
                     </div>
 
                     <div className="payment-options">

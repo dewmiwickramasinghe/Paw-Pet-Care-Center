@@ -8,31 +8,37 @@ const Receipt = () => {
     const receiptData = location.state?.receiptData;
 
     if (!receiptData) {
-        return (
-            <div className="receipt-container">
-                <h2>No receipt data available</h2>
-                <button onClick={() => navigate('/')}>Back to Home</button>
-            </div>
-        );
+        return <p>No receipt data available.</p>;
     }
+
+    const calculateSubtotal = (item) => {
+        if (item && typeof item.price === 'number' && typeof item.quantity === 'number') {
+            return item.price * item.quantity;
+        } else {
+            return 0; // Or handle the error in a way that's appropriate for your app
+        }
+    };
 
     return (
         <div className="receipt-container">
             <h1>Receipt</h1>
             <h3>Order Summary</h3>
             <ul>
-                {receiptData.items.map((item, index) => (
-                    <li key={index}>
-                        {item.name} - Rs. {item.price} x {item.quantity} = Rs. {item.price * item.quantity}
-                    </li>
-                ))}
+                {receiptData.items && receiptData.items.map((item, index) => {
+                    const subtotal = calculateSubtotal(item);
+                    return (
+                        <li key={index}>
+                            {item.name} - Rs. {item.price} x {item.quantity} = Rs. {subtotal}
+                        </li>
+                    );
+                })}
             </ul>
             <h3>Total: Rs. {receiptData.total}</h3>
             <h3>Shipping Address:</h3>
             <p>{receiptData.shippingAddress}</p>
             <h3>Payment Method:</h3>
             <p>{receiptData.paymentMethod}</p>
-            <button className = "Button" onClick={() => navigate('/')}>Back to Home</button>
+            <button className="Button" onClick={() => navigate('/')}>Back to Home</button>
         </div>
     );
 };

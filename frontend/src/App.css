@@ -5,7 +5,6 @@
   min-height: 100vh;
 }
 
-/* Header styles */
 .app-header {
   background-color: #fff;
   padding: 20px;
@@ -33,7 +32,8 @@
 }
 
 .search-button,
-.logout-button {
+.logout-button,
+.MyOrderbutton {
   background-color: #e74c3c;
   color: white;
   padding: 8px 12px;
