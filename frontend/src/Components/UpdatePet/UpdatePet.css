@@ -1,0 +1,18 @@
+/* Delete Button - Full Round */
+.add-pet-form .delete-button {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  width: 50px; /* Set width */
+  height: 50px; /* Set height (equal to width for a circle) */
+  border-radius: 50%; /* Make it a circle */
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.add-pet-form .delete-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

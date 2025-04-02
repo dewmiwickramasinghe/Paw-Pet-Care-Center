@@ -1,0 +1,179 @@
+/* Profile picture section - Rounded container */
+.propic-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  cursor: pointer;
+  margin: 20px auto;
+  position: relative;
+}
+
+.propic-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Profile picture preview (Circular) */
+.propic-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Camera icon inside the profile container */
+.propic-label i {
+  font-size: 24px;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide file input */
+.propic-container input[type="file"] {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .form-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .propic-container {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* AddPet.css */
+.add-pet-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.add-pet-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-pet-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-pet-form label {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Align labels and inputs horizontally */
+.add-pet-form div.field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add-pet-form div.field label {
+  margin-right: 10px; /* Space between label and input */
+}
+
+.add-pet-form div.field input,
+.add-pet-form div.field select,
+.add-pet-form div.field textarea {
+  width: 100%; /* Let the inputs take the full remaining space */
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Gender container */
+.add-pet-form .gender-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.add-pet-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff4081;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-pet-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-pet-form .error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.add-pet-form input[type='radio'] {
+  margin-right: 8px;
+}
+
+/* Make sure the file input is hidden and the profile container is centered */
+.add-pet-form .propic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 2px dashed #ddd;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.add-pet-form .propic-placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+.add-pet-form .propic-preview {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}

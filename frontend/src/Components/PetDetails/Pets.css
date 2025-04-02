@@ -1,0 +1,68 @@
+/* PetDetails page styles */
+.pet-details-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-details h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pet-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pet-details table th,
+.pet-details table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.pet-details table th {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+.pet-details table td {
+  font-size: 1rem;
+  color: #333;
+}
+
+.pet-details p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.pet-details-container .error-message {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .pet-details-container {
+    padding: 15px;
+  }
+
+  .pet-details table {
+    font-size: 0.9rem;
+  }
+
+  .pet-details table th,
+  .pet-details table td {
+    padding: 8px;
+  }
+}
+body {
+  background-color: white !important;
+}
+

@@ -1,0 +1,98 @@
+.add-user-container {
+    background: url('banner-img.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns form to the left */
+    /* Adds slight spacing from the left edge */
+    
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 50%; /* Occupies the left half */
+    height: 100vh; /* Makes it a good size */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+}
+
+form input {
+    display: block;
+    width: 90%; /* Adjusted to be responsive */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+
+button:hover {
+    background: #e04e2a;
+}
+select {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px #ccc; 
+    border-radius: 8px;
+    background: white;
+    color: #6d6d6d;
+    cursor: pointer;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 93%;
+}
+
+select:focus {
+    border-color: black; /* Darker pink on focus */
+    box-shadow: 0 0 5px black(255, 20, 147, 0.5);
+}
+/* Age selection container */
+.age-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Styling for the dropdowns */
+.age-container select {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff69b4; /* Pink border */
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.age-container select:focus {
+    border-color: #ff1493;
+    box-shadow: 0 0 5px rgba(255, 20, 147, 0.5);
+}
+.gender-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.gender-container label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+

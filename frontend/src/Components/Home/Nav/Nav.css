@@ -1,0 +1,96 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  position: fixed; /* Fixed position to stay at the top */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it stays above other elements */
+  height: 70px; /* Adjusted height for better spacing */
+  top: 0;
+  left: 0;
+  border: 2px black;
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+/* Adjust content to avoid overlapping with navbar */
+main {
+  margin: 0;
+  padding-top: 100px; /* Adjusted to match navbar height */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Navbar Links */
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px; /* Spacing between links */
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Allow navbar-links to take up space */
+  justify-content: flex-start; /* Align links to the left */
+}
+
+/* Navbar Link Styles */
+.navbar-links li {
+  display: inline-block;
+}
+
+/* Common Link Styles */
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav-link:hover {
+  color: #ddd; /* Light hover effect */
+}
+
+/* Button Styles */
+.nav-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #007bff; /* Blue button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.nav-button:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+  margin-left: auto; /* Push profile icon to the right */
+  display: flex; /* Align profile icon in the right corner */
+}
+
+.nav-link i {
+  font-size: 1.5rem;
+  color: #fff;
+}
