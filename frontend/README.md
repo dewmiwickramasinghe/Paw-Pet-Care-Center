@@ -1,0 +1,9 @@
+﻿Frontend Initial Setup
+## Test Credentials  
+**Admin Login**  
+- Email: admin@gmail.com  
+- Password: admin@123  
+
+**Pet Owner Login**  
+- Email: mpupaddya@gmail.com
+- Password: 1026H
