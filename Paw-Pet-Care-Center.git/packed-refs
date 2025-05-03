@@ -1,0 +1,11 @@
+# pack-refs with: peeled fully-peeled sorted 
+0092b1108c58f6743c31002632dd9ff03569651e refs/heads/Appointments
+5ebbfd8967ca41c5cce94323976fba3fbcc9e7c1 refs/heads/Inventory
+1287831616042eb3551d365743944cd5acf963bc refs/heads/Order_and_Payment
+28baf83342be037307e2928bfaf7276aae681f12 refs/heads/appointment
+3cb8b4bab7af3f794efef30f669b5b17f52ff4e9 refs/heads/finance
+97dd7dda04f62b341408b67e1e052f1e94af30d1 refs/heads/main
+a2e2ef97bc93327e61e20dab2b65b841ce364d73 refs/heads/master
+34ddff9965b6b7071bdd2013b4ad4ffcc24a6025 refs/pull/2/head
+11b9dc8b8f5a540f91e8a271a798adac424898f0 refs/pull/3/head
+39a51459964d920e60af9918095e60a9fbffecdd refs/pull/4/head
