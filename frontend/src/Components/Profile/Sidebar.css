@@ -1,0 +1,53 @@
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    background-color: #ffffff; /* Changed to white */
+    color: black; /* Changed to black */
+    padding: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar.hidden {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: black; /* Ensure the heading text is also black */
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black; /* Changed to black */
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  .sidebar a:hover {
+    color: #00d1b2; /* You can keep the hover color for links */
+  }
+  
+  .toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    font-size: 30px;
+    color: black; /* Changed to black */
+    background-color: white; /* Toggle button should remain white */
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
