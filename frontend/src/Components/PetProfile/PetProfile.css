@@ -1,3 +1,18 @@
+.pet-profile-page{
+  background-image: url('./r.jpg');
+  
+  
+  background-size: cover;         /* Make it cover full screen */
+  background-repeat: no-repeat;   /* Prevent repeating */
+  background-position: center;    /* Center the image */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+
+
+
 .pet-profile-container {
     display: flex;
     flex-direction: column;

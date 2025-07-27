@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import '../AddPet/Addpet.css'; // Reusing the same styles
+import './UpdatePet.css'; // Updated to a unique CSS file for this page
 
 function UpdatePet() {
   const { id, userId } = useParams(); // Get pet ID and user ID from URL
@@ -79,57 +79,58 @@ function UpdatePet() {
   };
 
   return (
-    <div className="add-pet-container">
-      <form onSubmit={handleSubmit} className="add-pet-form">
-        <h1>Pet Profile</h1>
+    <div className="update-pet-page">
+      <div className="update-pet-container">
+        <form onSubmit={handleSubmit} className="update-pet-form">
+          <h1>Update Pet</h1>
 
-        <label>Pet's Name</label>
-        <input type="text" name="petname" value={inputs.petname} onChange={handleChange} required />
+          <label>Pet's Name</label>
+          <input type="text" name="petname" value={inputs.petname} onChange={handleChange} required />
 
-        <label>Pet Type</label>
-        <select name="pettype" value={inputs.pettype} onChange={handleChange} required>
-          <option value="">Select Pet Type</option>
-          <option value="Dog">Dog</option>
-          <option value="Cat">Cat</option>
-          <option value="Bird">Bird</option>
-          <option value="Rabbit">Rabbit</option>
-          <option value="Other">Other</option>
-        </select>
+          <label>Pet Type</label>
+          <select name="pettype" value={inputs.pettype} onChange={handleChange} required>
+            <option value="">Select Pet Type</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Bird">Bird</option>
+            <option value="Rabbit">Rabbit</option>
+            <option value="Other">Other</option>
+          </select>
 
-        <label>Age</label>
-        <input type="text" name="age" value={inputs.age} onChange={handleChange} required />
+          <label>Age</label>
+          <input type="text" name="age" value={inputs.age} onChange={handleChange} required />
 
-        <label>Gender</label>
-        <div className="gender-container">
-          <label>
-            <input type="radio" name="gender" value="Male" checked={inputs.gender === 'Male'} onChange={handleChange} />
-            Male
-          </label>
-          <label>
-            <input type="radio" name="gender" value="Female" checked={inputs.gender === 'Female'} onChange={handleChange} />
-            Female
-          </label>
-        </div>
+          <label>Gender</label>
+          <div className="gender-container">
+            <label>
+              <input type="radio" name="gender" value="Male" checked={inputs.gender === 'Male'} onChange={handleChange} />
+              Male
+            </label>
+            <label>
+              <input type="radio" name="gender" value="Female" checked={inputs.gender === 'Female'} onChange={handleChange} />
+              Female
+            </label>
+          </div>
 
-        <label>Breed</label>
-        <input type="text" name="breed" value={inputs.breed} onChange={handleChange} required />
+          <label>Breed</label>
+          <input type="text" name="breed" value={inputs.breed} onChange={handleChange} required />
 
-        <label>Colour</label>
-        <input type="text" name="colour" value={inputs.colour} onChange={handleChange} required />
+          <label>Colour</label>
+          <input type="text" name="colour" value={inputs.colour} onChange={handleChange} required />
 
-        {error && <p className="error-message">{error}</p>}
+          {error && <p className="error-message">{error}</p>}
 
-        {/* Update and Delete Buttons */}
-        <div className="button-group">
-          <button type="submit" disabled={loading}>
-            {loading ? 'Updating...' : 'Update Pet'}
-          </button>
+          <div className="button-group">
+            <button type="submit" className="update-button" disabled={loading}>
+              {loading ? 'Updating...' : 'Update Pet'}
+            </button>
 
-          <button type="button" className="delete-button" onClick={handleDelete}>
-            Delete Pet
-          </button>
-        </div>
-      </form>
+            <button type="button" className="delete-button" onClick={handleDelete}>
+              Delete Pet
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

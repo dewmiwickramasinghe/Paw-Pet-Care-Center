@@ -10,15 +10,14 @@ body {
 /* Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100%;
   z-index: 1000;
-  height: 40px;
+  height: 50px;
   top: 0;
   left: 0;
 }
@@ -26,7 +25,7 @@ body {
 /* Adjust main content */
 main {
   margin: 0;
-  padding-top: 100px; /* So content doesn't hide behind navbar */
+  padding-top: 100px;
 }
 
 /* Navbar Links */
@@ -36,65 +35,59 @@ main {
   gap: 20px;
   margin: 0;
   padding: 0;
-  flex-grow: 1;
-  justify-content: flex-start; /* Align links to the left */
 }
 
 .navbar-links li {
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
   color: #fff;
   font-size: 16px;
-  padding: 10px;
+  padding: 8px;
 }
 
 .nav-link:hover {
   color: #ddd;
 }
 
-/* Profile Section Styles */
-.profile-section {
-  margin-left: auto;
-  margin-right: 40px; /* Push it little left from right edge */
+/* Profile Icon + Label */
+.profile-icon-link {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-/* Username Text */
-.username-text {
-  color: #fff;
-  font-size: 16px;
-}
-
-/* Profile Icon */
-.profile-icon {
-  font-size: 24px;
+  font-size: 18px;
   color: #fff;
   text-decoration: none;
 }
 
-.profile-icon:hover {
+.profile-icon-link:hover {
   color: #007bff;
 }
 
-/* Profile Link */
-.profile-link {
-  display: flex;
-  align-items: center;
-}
-
-.profile-icon-link {
-  display: flex;
-  align-items: center;
-  font-size: 20px;  /* Adjust the size of the icon */
+.profile-icon {
+  font-size: 22px;
 }
 
 .username-text {
-  margin-left: 8px;
+  margin-left: 5px;
   font-size: 14px;
-  color: #fff;  /* Adjust text color to white */
+  color: #fff;
 }
+/* Logo container */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 0;
+}
+
+/* Logo image */
+.logo-img {
+  height: 60px;         /* Adjust size here */
+  width: auto;
+  object-fit: contain;
+}
+
+

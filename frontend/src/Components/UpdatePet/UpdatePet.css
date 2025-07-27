@@ -1,18 +1,91 @@
-/* Delete Button - Full Round */
-.add-pet-form .delete-button {
+/* Add a background to this page only */
+.update-pet-page {
+  background-image: url('./uuuu.jpg');
+  background-size: cover;         /* Make it cover full screen */
+  background-repeat: no-repeat;   /* Prevent repeating */
+  background-position: center;    /* Center the image */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+/* Ensure the form container looks good */
+.update-pet-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.update-pet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.update-pet-form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.update-pet-form input,
+.update-pet-form select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.update-pet-form .gender-container {
+  display: flex;
+  gap: 10px;
+}
+
+.update-pet-form .gender-container label {
+  display: flex;
+  align-items: center;
+}
+
+.update-pet-form .error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.update-pet-form .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.update-pet-form .update-button {
   background-color: #4caf50; /* Green color */
   color: white;
   border: none;
-  width: 50px; /* Set width */
-  height: 50px; /* Set height (equal to width for a circle) */
-  border-radius: 50%; /* Make it a circle */
+  width: 100%; /* Full width for update button */
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.update-pet-form .delete-button {
+  background-color: #f44336; /* Red color */
+  color: white;
+  border: none;
+  width: 100%; /* Make it the same width as update button */
+  padding: 12px;
+  border-radius: 5px; /* Rectangular button */
+  font-size: 16px;
   cursor: pointer;
 }
 
-.add-pet-form .delete-button:hover {
+.update-pet-form .update-button:hover {
   background-color: #45a049; /* Darker green on hover */
+}
+
+.update-pet-form .delete-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
 }

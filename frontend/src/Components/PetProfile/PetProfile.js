@@ -30,6 +30,7 @@ function PetProfile() {
   };
 
   return (
+    <div className="pet-profile-page">
     <div className="pet-profile-container">
       <h2>Pet Profile</h2>
       <div className="pet-profile-card">
@@ -43,6 +44,7 @@ function PetProfile() {
           View Medical Record
         </button>
       </div>
+    </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-import './UpdateUser.css'
+import './UpdateUser.css';
 
 function UpdateUser() {
   const [inputs, setInputs] = useState({
@@ -13,9 +13,17 @@ function UpdateUser() {
   });
 
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false); // <-- added loading state
+  const [loading, setLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
+
+  // 🐾 Add background only for this page
+  useEffect(() => {
+    document.body.classList.add('update-user-background');
+    return () => {
+      document.body.classList.remove('update-user-background');
+    };
+  }, []);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -52,7 +60,7 @@ function UpdateUser() {
       const response = await axios.put(`http://localhost:5000/users/${id}`, inputs);
       if (response.status >= 200 && response.status < 300) {
         alert('User updated successfully');
-        navigate('/'); 
+        navigate('/');
       }
     } catch (err) {
       console.error('Error updating user:', err);
@@ -79,7 +87,7 @@ function UpdateUser() {
   }
 
   return (
-    <div className="add-user-container">
+    <div className="update-user-container">
       <div className="form-box">
         <h1>Update Profile</h1>
         <form onSubmit={handleSubmit}>
@@ -128,7 +136,7 @@ function UpdateUser() {
             <button type="submit" className="update-user-button" disabled={loading}>
               {loading ? 'Updating...' : 'Update User'}
             </button>
-<br></br>
+            <br />
             <button type="button" className="delete-user-button" onClick={handleDelete}>
               Delete User
             </button>

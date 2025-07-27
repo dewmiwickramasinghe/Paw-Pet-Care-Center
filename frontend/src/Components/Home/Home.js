@@ -23,8 +23,8 @@ function Home() {
             <h1>Expert Care for Your Beloved Companion from Paw Pet Care</h1>
             <p className="hero-subtitle">Premium Veterinary Services</p>
             <div className="cta-container">
-              <button className="cta-button primary">Schedule Consultation</button>
-              <button className="cta-button secondary">Explore Services</button>
+              <button className="cta-button primary">Appointment</button>
+              <button className="cta-button secondary">Store</button>
             </div>
           </div>
           <div className="hero-stats">
@@ -54,6 +54,7 @@ function Home() {
           <div className="service-card" onClick={() => navigate('/nutrition-planning')}>
             <div className="icon-container">
               <i className="fas fa-bone"></i>
+              
             </div>
             <h3>Nutrition Planning</h3>
             <p>Custom dietary programs for optimal health and vitality</p>

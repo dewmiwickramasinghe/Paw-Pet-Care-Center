@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const ChatBot = () => {
@@ -25,9 +26,23 @@ const ChatBot = () => {
     } else if (input.toLowerCase().includes('contact')) {
       reply = 'You can reach us at support@yourapp.com for any inquiries! 📧';
     } else if (input.toLowerCase().includes('services')) {
-      reply = 'We offer Pet Care, Grooming, Boarding, and more services for your pets. 🐕🐈';
+      reply = 'We offer Pet Care services,  much more! 🐕🐈';
     } else if (input.toLowerCase().includes('hello')) {
       reply = 'Hi there! How can I assist you today? 😄';
+    } else if (input.toLowerCase().includes('payment')) {
+      reply = 'For payment inquiries, please visit the Payments section on your account page. 💳';
+    } else if (input.toLowerCase().includes('account')) {
+      reply = 'You can manage your account settings by visiting the Account page. ⚙️';
+    } else if (input.toLowerCase().includes('feedback')) {
+      reply = 'We would love to hear your feedback! Please visit the Feedback page to share your thoughts. 💬';
+    } else if (input.toLowerCase().includes('update')) {
+      reply = 'To update your details, please go to the Profile page and make the changes there. 📝';
+    } else if (input.toLowerCase().includes('terms')) {
+      reply = 'You can read our terms and conditions on the Terms page. 📜';
+    } else if (input.toLowerCase().includes('thank you')) {
+      reply = 'You’re welcome! 😊 Let me know if you need anything else!';
+    } else if (input.toLowerCase().includes('goodbye')) {
+      reply = 'Goodbye! 🐾 I’m here if you need me again!';
     }
 
     setMessages(prev => [...prev, { sender: 'bot', text: reply }]);

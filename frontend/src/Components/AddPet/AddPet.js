@@ -97,96 +97,98 @@ function AddPet() {
   };
 
   return (
-    <div className="add-pet-container">
-      <form onSubmit={handleSubmit} className="add-pet-form">
-        <h1>{id ? 'Update Pet' : 'Add Pet'}</h1>
+    <div className="add-pet-page"> {/* Specific class for AddPet page */}
+      <div className="add-pet-container">
+        <form onSubmit={handleSubmit} className="add-pet-form">
+          <h1>{id ? 'Update Pet' : 'Add Pet'}</h1>
 
-        <label>Pet's Name</label>
-        <input
-          type="text"
-          name="petname"
-          value={inputs.petname}
-          onChange={handleChange}
-          placeholder="Pet Name"
-          required
-        />
+          <label>Pet's Name</label>
+          <input
+            type="text"
+            name="petname"
+            value={inputs.petname}
+            onChange={handleChange}
+            placeholder="Pet Name"
+            required
+          />
 
-        <label>Pet Type</label>
-        <select name="pettype" value={inputs.pettype} onChange={handleChange} required>
-          <option value="">Select Pet Type</option>
-          <option value="Dog">Dog</option>
-          <option value="Cat">Cat</option>
-          <option value="Bird">Bird</option>
-          <option value="Rabbit">Rabbit</option>
-          <option value="Other">Other</option>
-        </select>
+          <label>Pet Type</label>
+          <select name="pettype" value={inputs.pettype} onChange={handleChange} required>
+            <option value="">Select Pet Type</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Bird">Bird</option>
+            <option value="Rabbit">Rabbit</option>
+            <option value="Other">Other</option>
+          </select>
 
-        <label>Age</label>
-        <input
-          type="text"
-          name="age"
-          value={inputs.age}
-          onChange={handleChange}
-          placeholder="Age (e.g., 2 years)"
-          required
-        />
+          <label>Age</label>
+          <input
+            type="text"
+            name="age"
+            value={inputs.age}
+            onChange={handleChange}
+            placeholder="Age (e.g., 2 years)"
+            required
+          />
 
-        <label>Gender</label>
-        <div className="gender-container">
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="Male"
-              checked={inputs.gender === 'Male'}
-              onChange={handleChange}
-            />
-            Male
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="Female"
-              checked={inputs.gender === 'Female'}
-              onChange={handleChange}
-            />
-            Female
-          </label>
-        </div>
+          <label>Gender</label>
+          <div className="gender-container">
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                checked={inputs.gender === 'Male'}
+                onChange={handleChange}
+              />
+              Male
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="Female"
+                checked={inputs.gender === 'Female'}
+                onChange={handleChange}
+              />
+              Female
+            </label>
+          </div>
 
-        <label>Breed</label>
-        <input
-          type="text"
-          name="breed"
-          value={inputs.breed}
-          onChange={handleChange}
-          placeholder="Breed"
-          required
-        />
+          <label>Breed</label>
+          <input
+            type="text"
+            name="breed"
+            value={inputs.breed}
+            onChange={handleChange}
+            placeholder="Breed"
+            required
+          />
 
-        <label>Colour</label>
-        <input
-          type="text"
-          name="colour"
-          value={inputs.colour}
-          onChange={handleChange}
-          placeholder="Colour"
-          required
-        />
+          <label>Colour</label>
+          <input
+            type="text"
+            name="colour"
+            value={inputs.colour}
+            onChange={handleChange}
+            placeholder="Colour"
+            required
+          />
 
-        {error && <p className="error-message">{error}</p>}
+          {error && <p className="error-message">{error}</p>}
 
-        <button type="submit" disabled={loading}>
-          {loading ? 'Saving...' : id ? 'Update Pet' : 'Add Pet'}
-        </button>
-      </form>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Saving...' : id ? 'Update Pet' : 'Add Pet'}
+          </button>
+        </form>
 
-      {id && (
-        <button className="delete-button" type="button" onClick={handleDelete}>
-          Delete Pet
-        </button>
-      )}
+        {id && (
+          <button className="delete-button" type="button" onClick={handleDelete}>
+            Delete Pet
+          </button>
+        )}
+      </div>
     </div>
   );
 }

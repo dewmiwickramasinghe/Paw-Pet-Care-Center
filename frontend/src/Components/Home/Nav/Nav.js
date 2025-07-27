@@ -1,33 +1,31 @@
 import React from 'react';
 import './Nav.css';
 import { Link } from 'react-router-dom';
-import 'font-awesome/css/font-awesome.min.css';  // Import FontAwesome
+import 'font-awesome/css/font-awesome.min.css';
+import logo from '../Nav/b.png'; // Update this path as needed
 
 function Nav() {
-  // Get user details from localStorage
   const userId = localStorage.getItem('userId');
   const username = localStorage.getItem('userName');
-
-  // Profile link setup
   const profileLink = userId ? `/userdetails/${userId}` : '/login';
-
-
 
   return (
     <nav className="navbar">
+      {/* Logo */}
+      <div className="navbar-logo">
+        <Link to="/mainhome">
+          <img src={logo} alt="Paw Pet Care" className="logo-img" />
+        </Link>
+      </div>
+
       {/* Navigation Links */}
       <ul className="navbar-links">
         <li>
           <Link to="/mainhome" className="nav-link">Home</Link>
         </li>
-        <li>
-          <Link to="/userdetails" className="nav-link">User List</Link>
-        </li>
-       
-        
       </ul>
 
-      {/* Right side buttons (Login, Signup, Profile) */}
+      {/* Right side buttons */}
       <div className="profile-section">
         <ul className="navbar-links">
           <li>
@@ -40,7 +38,7 @@ function Nav() {
             <Link to={profileLink} className="nav-link">
               <i className="fa fa-user" aria-hidden="true"></i>
             </Link>
-            {username && <span className="username-text">{`Hi, ${username}`}</span>} {/* Corrected this part */}
+            {username && <span className="username-text">{`Hi, ${username}`}</span>}
           </li>
         </ul>
       </div>

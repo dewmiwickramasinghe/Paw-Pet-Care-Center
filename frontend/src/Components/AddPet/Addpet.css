@@ -1,16 +1,19 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #dff6ff, #b2ebf2);
-  background-image: url('https://images.unsplash.com/photo-1601758123927-1964f1cfb4ae'); /* Example pet image */
+.add-pet-page {
+  background-image: url('./z.jpg'); /* Add the background image */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure full height of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding to avoid elements touching edges */
 }
 
 .add-pet-container {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 30px;
+  max-width: 600px; /* Increased max width for more space */
+  width: 100%;
+  padding: 40px; /* Add more padding for spacing */
   background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
@@ -36,9 +39,10 @@ body {
 .add-pet-form input[type="number"],
 .add-pet-form select {
   width: 100%;
-  padding: 10px;
+  padding: 12px; /* Make input fields a little taller */
   border: 1px solid #aaa;
   border-radius: 8px;
+  font-size: 16px; /* Increase font size for better readability */
 }
 
 .age-inputs {
@@ -53,7 +57,7 @@ body {
 
 .add-pet-form button {
   width: 100%;
-  padding: 10px;
+  padding: 15px; /* Make button larger */
   background-color: #00796b;
   color: white;
   font-size: 18px;

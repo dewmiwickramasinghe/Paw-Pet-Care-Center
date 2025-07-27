@@ -51,6 +51,8 @@
 .login-container form input,
 .login-container form select,
 .login-container form button {
+  width: 100%;
+  box-sizing: border-box; /* Important to match sizes */
   margin-bottom: 15px;
   padding: 12px;
   font-size: 16px;
